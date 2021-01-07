@@ -17,8 +17,12 @@ if (navigator.userAgent.indexOf("Chrome") > 0) {
 
 video.addEventListener("timeupdate", function(event) {
 	var progress = ((video.currentTime * 100) / video.duration);
-	range.value = progress;
+	range.value = progress.toFixed(2);
 	rangeColor(range);
+});
+
+range.addEventListener("change", function(event) {
+	video.currentTime = video.duration / 100 * range.value;
 });
 
 playButton.addEventListener("click", function(event) {
