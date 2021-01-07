@@ -5,10 +5,9 @@ var controls = myVideoPlayer.querySelector(".controls");
 var volumeToggle = myVideoPlayer.querySelector(".volumeToggle");
 var volumeSlider = myVideoPlayer.querySelector(".volumeSlider");
 var rangeFinder = myVideoPlayer.querySelector(".rangeFinder");
-var progress = rangeFinder.querySelector(".progress");
 var range = document.getElementById("range2");
+var preBar = document.querySelector('.preBar');
 var currentVolume = 1;
-
 
 if (navigator.userAgent.indexOf("Chrome") > 0) {
 	controls.style.width = (video.offsetWidth - 106) + "px";
@@ -50,8 +49,6 @@ volumeSlider.addEventListener("change", function(event) {
 });
 
 // -- RangeFinder --
-var preBar = document.querySelector('.preBar');
-
 function rangeColor(input) {
   input.className = input.className.length ? (input.className + ' colorized') : 'colorized';
 	preBar.style.width = input.value + '%';
